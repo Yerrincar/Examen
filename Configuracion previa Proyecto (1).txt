@@ -1,0 +1,21 @@
+Configuracion del proyecto-> 
+	1) añadir los archivos SQL a la carpeta SQL del proyecto en VisualStudio y configurar el settings.py:
+		- añadir en los SQL SCRIPTS , los archivos SQL que nos den.
+		- cambiar el nombre de la base de datos que nos pidan.
+
+	2) En HeidiSQL , creamos la base de datos (CREATE DATABASE nombreBD) en una consulta y 
+	    ejecutamos para que se cree. Una vez ejecutada, pulsamos F5 sobre el IISSI_ROOT para que se actualice
+                y nos muestre la BD creada.
+	3) En HeidiSQL (desde IISSI_ROOT), nos vamos a Herramientas-> Administrador de usuarios -> iissi_user -> agregar objeto. 
+		-> Seleccionamos la base de datos creada y le otorgamos todos los permisos -> Guardar-> Cerrar.
+	4) Desde la BD en el IISSI_USER , nos vamos a Archivo -> Cargar archivo SQL y seleccionamos los archivos SQL
+	    que nos hagan falta. Una vez añadidos, basta con seleccionarlos y ejecutarlos. Posteriormente, pulsamos F5 para que se recarguen
+                y comprobamos que se hayan añadido las correspondientes tablas a la BD creada.
+	5) Si todo ha ido bien y se nos han cargado las tablas en la BD , nos vamos a VisualStudio y abrimos un nuevo terminal .
+	   Aquí, tenemos que ejecutar (Sobre la carpeta raiz(root) los siguientes comandos:
+		-> silence createdb
+		-> silence createapi
+		-> silence createtests
+		-> silence run
+	6)Nos saldrá esto: Running on http://127.0.0.1:8081/ (Press CTRL+C to quit), basta con pulsar control+click sobre el 
+	   enlace http para que nos abra la pagina web en nuestro navegador.
